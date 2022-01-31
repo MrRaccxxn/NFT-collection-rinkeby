@@ -3,123 +3,109 @@
   background-color: #0d1116;
   overflow: scroll;
   text-align: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 10%;
   height: 100%;
-  background-color: #0d1116;
-  display: flex;
-  flex-direction: column;
+  background-color: white;
   justify-content: space-between;
 }
 
-.header-container {
-  padding-top: 30px;
-}
 
-.header {
-  margin: 0;
-  font-size: 50px;
-  font-weight: bold;
-}
-
-.sub-text {
-  font-size: 25px;
-  color: white;
-}
-
-.gradient-text {
-  background: -webkit-linear-gradient(left, #60c657 30%, #35aee2 60%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.cta-button {
-  height: 45px;
-  border: 0;
-  width: auto;
-  padding-left: 40px;
-  padding-right: 40px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-}
-
-.connect-wallet-button {
-  background: -webkit-linear-gradient(left, #60c657, #35aee2);
-  background-size: 200% 200%;
-  animation: gradient-animation 4s ease infinite;
-}
-
-.mint-button {
-  background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
-  background-size: 200% 200%;
-  animation: gradient-animation 4s ease infinite;
-  margin-right: 15px;
-}
-
-.opensea-button {
-  background-color: rgb(32, 129, 226);
-}
-
-.mint-count {
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.footer-container {
+.mintInformation {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+}
+
+.titleText{
+  margin: 0;
+  padding: 2% 0;
+  font-size: 4.6rem;
+  text-align: left;
+  color: #2B3640;
+}
+
+.callActionText{
+  margin: 0;
+  padding-left: 10px;
+  color: #4c5a5f;
+}
+
+.mintButton{
+  border: solid 2px pink;
+  border-radius: 30px;
+  padding: 10px 30px;
+  margin-top: 15px;
+  width: 30%;
+  font-weight: 400;
+}
+
+.mintButton:hover{
+  cursor: pointer;
+  border: solid 2px #6D757C;
+  font-weight: 600;
+}
+
+.title{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.svgLine{
+  width: 10%;
+}
+
+.imgContainer {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  justify-content: center;
 }
 
-.twitter-logo {
-  width: 35px;
-  height: 35px;
+#loopAnimation {
+  max-width: 560px;
+  width: 100%;
 }
 
-.footer-text {
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+.mobileVersion{
+  display: none;
 }
 
-/* KeyFrames */
-@-webkit-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 100vh;
+    padding: 30px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 70%;
   }
-  50% {
-    background-position: 100% 50%;
+
+  .titleText{
+    font-size: 2.5rem;
   }
-  100% {
-    background-position: 0% 50%;
+
+  .callActionText{
+    font-size: 1rem;
   }
-}
-@-moz-keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
+
+  .mintButton{
+    margin: 5% 0;
+    align-self: center;
+    width: 70%;
   }
-  50% {
-    background-position: 100% 50%;
+
+  .mobileVersion{
+    display: block;
   }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
+
+  .webVersion{
+    display: none;
   }
 }

@@ -1,39 +1,27 @@
 import './styles/App.css';
-import twitterLogo from './assets/twitter-logo.svg';
+import animationLoop from './assets/animation_loop.gif';
 import React from "react";
 
-// Constants
-const TWITTER_HANDLE = '_buildspace';
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-const OPENSEA_LINK = '';
-const TOTAL_MINT_COUNT = 50;
 
 const App = () => {
-  // Render Methods
-  const renderNotConnectedContainer = () => (
-    <button className="cta-button connect-wallet-button">
-      Connect to Wallet
-    </button>
-  );
-
   return (
     <div className="App">
       <div className="container">
-        <div className="header-container">
-          <p className="header gradient-text">My NFT Collection</p>
-          <p className="sub-text">
-            Each unique. Each beautiful. Discover your NFT today.
-          </p>
-          {renderNotConnectedContainer()}
+        <div className='mintInformation'>
+          <div className='title'>
+            <svg className='svgLine' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 841.9 10">
+              <g fill="#61DAFB">
+                <path d="m0 0h1120" fill="#01a09e" stroke="#01a09e" strokeWidth="20"/>
+              </g>
+            </svg>
+            <h3 className='callActionText'>What are you waiting for?</h3>
+          </div>
+          <h2 className='titleText'>The most creative NFT collection according to my mom</h2>
+          <a className='mintButton webVersion'>Mint now</a>
         </div>
-        <div className="footer-container">
-          <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
+        <div className='imgContainer'>
+          <img id='loopAnimation' alt='Walking animation' src={animationLoop}></img>
+          <a className="mintButton mobileVersion">Mint now</a>
         </div>
       </div>
     </div>
