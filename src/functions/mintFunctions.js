@@ -1,5 +1,9 @@
+import myEpicNft from '../utils/MyEpicNfts.json';
+import { ethers } from "ethers";
+import setupEventListener from './setupEventListeners';
+
 const askContractToMint = async () => {
-  const CONTRACT_ADDRESS = "INSERT_YOUR_DEPLOYED_RINKEBY_CONTRACT_ADDRESS";
+  const CONTRACT_ADDRESS = "0xf944Fa2557a4DfCd1e90D5B511981aE33a2Eb2eF";
 
   try {
     const { ethereum } = window;
@@ -22,6 +26,8 @@ const askContractToMint = async () => {
       console.log(
         `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
       );
+
+      setupEventListener() ;
     } else {
       console.log("Ethereum object doesn't exist!");
     }

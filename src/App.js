@@ -1,6 +1,8 @@
 import "./styles/App.css";
 import animationLoop from "./assets/animation_loop.gif";
 import React, { useState, useEffect } from "react";
+import askContractToMint from './functions/mintFunctions';
+import setupEventListener from './functions/setupEventListeners';
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -38,6 +40,7 @@ const App = () => {
         method: "eth_requestAccounts",
       });
       setCurrentAccount(accounts[0]);
+      setupEventListener() ;
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -82,7 +85,7 @@ const App = () => {
               )}
             </a>
           ) : (
-            <a className="mintButton webVersion">Mint now</a>
+            <a className="mintButton webVersion" onClick={askContractToMint}>Mint now</a>
           )}
         </div>
         <div className="imgContainer">
