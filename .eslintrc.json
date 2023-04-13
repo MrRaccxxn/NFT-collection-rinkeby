@@ -1,0 +1,25 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "ignorePatterns": [
+        "node_modules"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "babelOptions": {
+            "babelrc": false,
+            "configFile": false,
+            "presets": [
+                "@babel/preset-react"
+            ]
+        }
+    },
+    "rules": {
+        "react/react-in-jsx-scope": "off"
+    }
+}
