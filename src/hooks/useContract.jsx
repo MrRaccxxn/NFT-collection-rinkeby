@@ -46,7 +46,7 @@ export const useContract = () => {
         console.log("Mining...please wait.");
         await nftTxn.wait();
 
-        console.log(`Mined, see transaction: https://goerli.etherscan.io/tx/${nftTxn.hash}`);
+        console.log(`Mined, see transaction: ${Config.ETHERSCAN_BASE_URL}/tx/${nftTxn.hash}`);
       }
     } catch (error) {
       console.log(error);

@@ -25,11 +25,11 @@ export const useAccount = () => {
         method: 'eth_chainId'
       });
 
-      if (chainId !== Config.GOERLI_NETWORK_ID) {
+      if (chainId !== Config.NETWORK_ID) {
         try {
           await window.ethereum.request({
             method: 'wallet_switchEthereumChain',
-            params: [{ chainId: Config.GOERLI_NETWORK_ID }]
+            params: [{ chainId: Config.NETWORK_ID }]
           });
         } catch (err) {
           if (err.code === 4902) {
@@ -37,10 +37,10 @@ export const useAccount = () => {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainName: 'Goerli Testnet',
-                  chainId: Config.GOERLI_NETWORK_ID,
+                  chainName: 'Sepolia Testnet',
+                  chainId: Config.NETWORK_ID,
                   nativeCurrency: { name: 'ETH', decimals: 18, symbol: 'ETH' },
-                  rpcUrls: ['https://goerli.blockpi.network/v1/rpc/public	']
+                  rpcUrls: [Config.RPC_URL]
                 }
               ]
             });
